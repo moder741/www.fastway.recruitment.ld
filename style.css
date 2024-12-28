@@ -1,0 +1,1246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;500;600;700&display=swap');
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+    color: #fff ;
+    font-size: 16px;
+} 
+
+a {
+    text-decoration: none;
+    color: #3a8310;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    background: linear-gradient(180deg, rgb(0, 0, 0) 0%, rgb(9, 26, 1) 100%);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 50px 0;
+}
+
+header .logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #99999900;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cl {
+    color: #3a8310;
+}
+
+header nav {
+    float: right;
+    width: 50%;
+}
+
+.fon1 {
+    z-index: 10000;
+}
+
+.fon2 {
+    z-index: 0;
+}
+
+.phone {
+    z-index: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+    position: relative;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: #fff;
+}
+
+header nav ul li:not(.btn) a:hover {
+    border-bottom: 3px solid #3a8310;
+    border-radius: 1px;
+    margin: 1px 0;
+}
+
+header nav ul li.btn a, .email .block button {
+    background: #3a8310;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition-property: all 310ms ease;
+}
+
+header nav ul li.btn a:hover, .email .block button:hover {
+    background: #ffffff;
+    color: black;
+}
+
+.hero {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero--info {
+    width: 530px;
+    padding-top: 60px;
+}
+
+.hero--info h2 {
+    color: #3a8310;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero--info h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.hero--info p {
+    font-weight: 500;
+    line-height: 170%;
+    margin: 30px 0;
+}
+
+.hero--info .btn {
+    background: #3a8310;
+    color: #fff;
+    border-radius: 50px; 
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 22px;
+}
+
+.hero--info .btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hero img {
+    position: absolute;
+    top: -20px;
+    right: -115px;
+    width: 65%;
+    z-index: 0;
+}
+
+
+.trending h3 {
+    font-weight: 600;
+    font-size: 31px;
+}
+
+.trending .see-all {
+    color: #fff;
+    background: #25211D;
+    border-radius: 5px;
+    padding: 12px 23px;
+    float: right;
+    display: block;
+    transition: all 50ms;
+}
+
+.project .see-all {
+    float: none;
+}
+
+.trending .see-all:hover {
+    transform: scale(1.1);
+}
+
+.trending .games {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 0;
+}
+
+
+
+.fl {
+    width: 200px;
+    height: 200px;
+}
+
+.block4 {
+    background: #1c140f;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.trending .games span {
+    text-align: center;
+    display: inline-block;
+    padding: 3px;
+    margin-top: 12px;
+}
+
+.btnn {
+    background: #FA9021;
+    padding: 12px 18px;
+    border-radius: 5px;
+    transition-property: all 310ms ease;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.btnn:hover {
+    background: #ffffff;
+    color: black;
+}
+
+.trending .games span img {
+ position: relative;
+ top: 5px;
+ margin-right: 7px;
+}
+
+.big-text {
+    padding: 50px 0;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    width: 800px;
+
+}
+
+.banner {
+    padding: 80px 0;
+}
+
+.banner h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.banner p {
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 550px;
+}
+
+.banner img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.features {
+    background: url('img/Group\ 1321.png') no-repeat center fixed;
+    background-size: cover;
+    padding: 80px 0;
+}
+
+.features p {
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.features h3 {
+    font-size: 30px;
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.features .info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .info .block {
+    text-align: center;
+    width: 20%;
+    margin: 30px 2%;
+}
+
+.features .info .block img {
+    margin-bottom: 15px;
+}
+
+.project {
+    padding: 100px 0;
+
+}
+
+.project h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.project p {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.project .images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.project .see-all {
+    float: none;
+    width: 70px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    background: #25211D;
+    border-radius: 5px;
+    padding: 12px 23px;
+    float: none;
+    display: block;
+    transition: all 50ms;
+}
+
+.project .see-all:hover {
+    transform: scale(1.1);
+}
+.email {
+    padding-bottom: 120px;
+
+}
+
+.email h3 {
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.email .block {
+    background: #131c0f;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email .block h4 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.email .block p {
+    width: 500px;
+}
+
+.email .block input {
+    background: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 7px;
+    width: 380px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -90px;
+    z-index: 1;
+    padding-right: 110px;
+
+}
+
+.email .block input::placeholder {
+    color: #898989;
+} 
+
+.email .block button {
+    cursor: pointer;
+    border: 0;
+    padding: 13px 17px;
+    position: relative;
+    z-index: 2;
+    left: -10px;
+    color: #fff;
+}
+
+footer { 
+    background: #111;
+    padding: 50px 0;
+}
+
+footer .block {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .block .Logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+footer .block p {
+    width: 300px;
+    margin: 15px 0;
+}
+
+footer .block h4 {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+footer .block ul {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+footer hr{
+    margin: 30px 0;
+    border: 0;
+    height: 0.6px;
+    background: #ccc;
+}
+
+footer>p {
+    text-align: center;
+}
+
+.hero-about .info {
+    width: 500px;
+    padding: 250px 0;
+}
+
+.hero-about .info h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+ 
+
+.hero-about .info .btn {
+    background: #FA9021;
+    color: #fff;
+    border-radius: 50px; 
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.hero-about  .info .btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hero-about {
+    position: relative;
+}
+
+.hero-about img {
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+
+.work {
+    padding: 80px 0;
+    display: none;
+}
+
+.work h2 {
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.work .block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.work .blocks .block {
+    width: 25%;
+    border-radius: 10px ;
+    padding: 50px 35px;
+    background:#1c140f ;
+}
+
+.work .blocks .block h3 {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.work .blocks .block .badge {
+    border-radius: 7px;
+    padding: 10px 20px;
+}
+
+.work .blocks .block .badge.purple {
+    background: #560f67;
+    opacity: 89%;
+}
+
+.work .blocks .block .badge.brown {
+    background: #DC4200;
+}
+
+.work .blocks .block .badge.green {
+    background: #00DC8D;
+}
+
+
+.about {
+    font-size: 32px;
+    padding: 15px 0;
+    font-weight: 800;
+}
+
+.about-p {
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+
+/* Регистрация */
+/* Регистрация № 1*/
+
+.window-window {
+    cursor: pointer;
+        left: 20px;
+        bottom: -200px;
+        position: relative;
+        border-radius: 15px;
+        width: 400px;
+        background: #ffffff;
+        height: 200px;
+        border: 2px solid #ccc;
+    transition: border-color 0.3s ease;
+    margin: 0px 40px 40px 0px;
+    display: inline-block;
+    transition: all 500ms ease;
+
+
+}
+
+.window-window h2{
+    color: black;
+}
+
+
+input[type="radio"]:checked {
+    border-color: black;
+    background-color: black;
+    color: #fff;
+}
+
+
+
+.window-window:hover {
+    border-color: #000000;
+    transform: scale(1.1);
+}
+
+.window-window p{
+    bottom: -79px;
+    position: relative;
+    color: #0000009d;
+    left: -30px;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Скрытие модального окна */
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hiddenn {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /* Контейнер модального окна */
+  .modal-content {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 1000px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    height: 600px;
+  }
+
+
+.reg {
+    text-align: center;
+    font-size: 24px;
+    background-color: #898989;
+    border-radius: 5px;
+    padding: 15px 5px;
+    opacity: 0.5;
+}
+
+
+.emaill {
+    padding-bottom: 120px;
+
+}
+
+.emaill h3 {
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.emaill .blockk {
+    background: #131c0f;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emaill .blockk h4 {
+    font-size: 30px;
+    font-weight: 500;
+    width: 400px;
+    margin-bottom: 80px;
+}
+
+.emaill .blockk p {
+    width: 250px;
+}
+
+    .emaill .blockk input {
+        background: #fff;
+        outline: none;
+        border: 0;
+        border-radius: 7px;
+        width: 380px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        padding: 20px 30px;
+        position: relative;
+        right: -200px;
+        margin: 30px;
+        z-index: 1;
+        padding-right: 110px;
+    }
+
+.emaill .blockk input::placeholder {
+    color: #898989;
+} 
+
+.emaill .blockk button {
+    cursor: pointer;
+    border: 0;
+    padding: 13px 17px;
+    position: relative;
+    border-radius: 5px;
+    z-index: 2;
+    background-color: #3a8310;
+    left: 590px;
+    font-size: 20px;
+    bottom: -48px;
+    color: #ffffff;
+}
+
+.oldd-pricee p {
+    color: #999;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    margin-top: 2px;
+}
+
+
+.button {
+    cursor: pointer;
+    border: 0;
+    padding: 13px 17px;
+    position: relative;
+    border-radius: 5px;
+    z-index: 2;
+    background-color: #3a8310;
+    left: 60px;
+    font-size: 18px;
+    float: right;
+    left: 5px;
+    color: #ffffff;
+    max-width: 115px;
+}
+
+.ul {
+    list-style-type: none;
+}
+
+/* Кнопка фото профиля */
+
+.upload-button {
+    display: inline-block;
+    padding: 13px 17px;
+    background-color: #3a8310;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    float: right;
+    text-align: center;
+}
+
+.upload-button:hover {
+    background-color: #45a049;
+}
+
+.photo-preview {
+    width: 300px;
+    height: 300px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    margin-top: 10px;
+    background-size: cover;
+    margin-bottom: 120px;
+    background-position: center;
+}
+
+
+.photo-preview p {
+    font-size: 18px;
+    text-align: center;
+    color: #999;
+    margin-left: 24px;
+    margin-top: 130px;
+}
+
+.As {
+    float: left;
+}
+
+/* Вход в аккуант */
+
+.doen {
+    color: #ccc;
+}
+
+.emailll {
+    padding-bottom: 120px;
+
+}
+
+.emailll h3 {
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.emailll .blockkk {
+    background: #131c0f;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emailll .blockkk h4 {
+    font-size: 30px;
+    font-weight: 500;
+    width: 400px;
+    margin-bottom: 195px;
+}
+
+.emailll .blockkk p {
+    width: 250px;
+}
+
+.emailll .blockkk input {
+    background: #fff;
+    outline: none;
+    border: 0;
+    border-radius: 7px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -200px;
+    margin: 30px;
+    z-index: 1;
+    padding-right: 110px;
+}
+
+.emailll .blockkk input::placeholder {
+    color: #898989;
+} 
+
+.emailll .blockkk button {
+    cursor: pointer;
+    border: 0;
+    padding: 13px 17px;
+    position: relative;
+    border-radius: 5px;
+    z-index: 2;
+    background-color: #3a8310;
+    left: 60px;
+    font-size: 13px;
+    bottom: -60px;
+    color: #ffffff;
+}
+
+/* Доработка фрилансеров */
+
+.Info-frilance {
+    font-size: 18px;
+    float: left;
+    position: relative;
+    left: -35px;
+    top: -30px;
+}
+
+.fl {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.block5 {
+    position: relative;
+    background: #131c0f;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 40px 3%;
+    width: 20%;
+    height: 470px;
+    display: inline-block;
+    margin-left: 20px;
+    left: 100px;
+}
+
+.see-allll {
+    display: none;
+    float: none;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    background: #1d251f;
+    border-radius: 5px;
+    padding: 10px 20px;
+    float: none;
+    display: block;
+    position: relative;
+    font-size: 16px;
+    right: -50px;
+    transition: all 50ms;
+    margin-top: 20px;
+    border: 0;
+    top: -80px;
+}
+.see-allll:hover {
+    transform: scale(1.1);
+}
+
+.fame-frelance p {
+    color: #ccc;
+    max-width: 150px;
+}
+
+.levl {
+    font-size: 14px;
+    position: relative;
+    left: 115px;
+    bottom: -10px;
+    padding: 8px 13px;
+    border-radius: inherit;
+    max-width: 141px;
+    background: #3a831077;
+}
+
+
+.levl2 {
+    font-size: 14px;
+    position: relative;
+    left: 115px;
+    bottom: -10px;
+    padding: 8px 13px;
+    border-radius: inherit;
+    max-width: 141px;
+    background: #83811077;
+}
+
+
+.levl3 {
+    font-size: 14px;
+    position: relative;
+    left: 115px;
+    bottom: -10px;
+    padding: 8px 13px;
+    border-radius: inherit;
+    max-width: 141px;
+    background: #62695e77;
+}
+
+
+.levl4 {
+    font-size: 14px;
+    position: relative;
+    left: 115px;
+    bottom: -10px;
+    padding: 8px 13px;
+    border-radius: inherit;
+    max-width: 141px;
+    background: #83101077;
+}
+
+.for {
+    color: #fff;
+}
+
+.Ot {
+    color: #ccc;
+    font-weight: 200;
+}
+
+/* Верстаем категории */
+
+.pod {
+    color: #3a8310;
+}
+
+/* Верстаем кабинет */
+
+.fm {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+}
+.setm {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    top: 0px;
+    right: 30px;
+}
+
+.hr1 {
+    margin-top: 10px;
+    max-width: 100%;
+}
+
+.Fame1 {
+
+}
+
+.levl-prof {
+    left: 1115px;
+    font-size: 18px;
+    position: relative;
+    bottom: 70px;
+    padding: 8px 13px;
+    border-radius: 50px;
+    max-width: 190px;
+    background: #83811077;
+    top: -360px;
+}
+
+.podd {
+    color: #ffffff;
+    position: relative;
+    left: 1125px;
+    top: -340px;
+    max-width: 197px;
+}
+
+.podi {
+    color: #3a8310;
+}
+
+
+.hr2 {
+    rotate: 90deg;
+    position: relative;
+    bottom: -354px;
+    left: 370px
+}
+
+.info-prof p {
+    color: #5a5a5a;
+    max-width: 400px;
+    max-height: 900px;
+    margin-top: 5px;
+}
+
+.cl1 {
+    color: #b1b0b0;
+}
+
+
+.star1 {
+    color: #fff;
+    font-size: 19px;
+    position: relative;
+    max-width: 240px;
+    top: 905px;
+    float: right;
+    max-width: 200px;
+    left: -1156px;
+    z-index: 1000;
+}
+
+
+.block10 {
+    background: #131c0f;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 40px 3%;
+    width: 20%;
+    height: 350px;
+    justify-content: space-between;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.block11 {
+    background: #0f101c;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 40px 3%;
+    width: 20%;
+    height: 350px;
+    justify-content: space-between;
+    margin-left: 20px;
+    display: inline-block;
+    position: relative;
+    top: -25px;
+}
+
+.block12 {
+    background: #1c1a0f;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 40px 3%;
+    width: 20%;
+    height: 350px;
+    justify-content: space-between;
+    margin-left: 20px;
+    position: relative;
+    top: -25px;
+}
+
+.block13 {
+    left: 390px;
+    background: #1b0f1c;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 40px 3%;
+    width: 20%;
+    height: 350px;
+    justify-content: space-between;
+    margin-left: 20px;
+    position: relative;
+    top: -485px;
+}
+
+
+.Infoo-frilance {
+    position: relative;
+}
+
+.famee-frelance p {
+    margin-bottom: 10px;
+}
+
+
+.edit-all {
+    display: none;
+    float: none;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    margin: 0 auto;
+    color: #fff;
+    background: #1d251f;
+    border-radius: 50px;
+    padding: 10px 20px;
+    float: none;
+    display: block;
+    position: relative;
+    font-size: 16px;
+    right: -340px;
+    transition: all 50ms;
+    margin-top: 20px;
+    border: 0;
+    top: 55px;
+}
+.edit-all:hover {
+    transform: scale(1.1);
+}
+
+.navigation-work {
+
+}
+
+.navigation-work ul {
+    list-style: none;
+    display: ruby;
+}
+
+.navigation-work a {
+    top: -433px;
+    padding: 22px 89px;
+    left: 260px;
+    border: 2px solid #fff;
+    position: relative;
+    color: #fff;
+    margin-left: -10px;
+}
+
+/* Верстаем фрилансеров 'Доработка № 1' */
+
+.freelancers #more-freelancers {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .freelanc {
+    position: relative;
+    background: #131c0f;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 40px 3%;
+    width: 20%;
+    height: 470px;
+    display: inline-block;
+    margin-left: 20px;
+    left: 100px;
+    transition: transform 0.3s;
+  }
+  
+  .freelanc:hover {
+    transform: scale(1.05);
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .modal-content h2 {
+    text-align: justify;
+    left: 40px;
+    font-size: 36px;
+    top: -630px;
+    position: relative;
+    width: 350px;
+    color: #fff;
+  }
+
+  .p_reg {
+    width: 401px;
+    text-align: justify;
+    left: 40px;
+    color: #fff;
+    position: relative;
+    top: -630px;
+    font-size: 20px;
+}
+
+
+.auth-bottons{
+    position: fixed;
+    top: 100px;
+}
+
+.login1 {
+    bottom: -300px;
+    left: 630px;
+    position: relative;
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 15px 70px;
+}
+
+

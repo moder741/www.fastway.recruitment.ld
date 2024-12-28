@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="container">
+        <span class="logo">Moder<strong class="cl">Web</strong></span>
+        <nav>  
+            <ul>
+                <li class="active"><a href="#">Главная</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="#">Категория</a></li>
+                <li><a href="kabinet.html">Кабинет</a></li>
+                <li id="auth-botton"><a href="Regisrt.html">Регистрация</a></li>
+                <li id="orders-button" style="display: none;"><a href="#">Мои заказы</a></li>
+                <li></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero container">
+        <div class="hero--info">
+            <h1>Начиная свою роботу с Moder<strong class="cl">Web</strong></h1>
+            <p>MODER<strong class="cl">WEB</strong> - ваш первый шаг к совершенству. Создавайте будущее вместе с нами, раскрывая потенциал технологий и вдохновляя мир на новые достижение!</p>
+            <button id="continue-btn" class="btn">Вход в аккаунт</button>
+            <img class="fon1" src="img/Kompik.png" alt="">
+
+            <div id="modal" class="modal hidden">
+                <div class="modal-content">
+                    <img style="border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    left: -270px;
+                    position: relative;
+                    height: 640px;
+                    width: 500px;
+                    object-fit: cover;" src="img/Reg.png" alt="">
+            <h2>Успех начинается здесь</h2>
+                <div class="p_reg">
+                    <p>&#10003; Боллее 700 категорий</p>
+                    <p>&#10003; Качественная работа, выполненная быстрее</p>
+                    <p>&#10003; Доступ к талантам и предприятиям по всему миру</p>
+                </div>
+                <div>
+                    <h2 style="color: black;
+                    left: 595px;
+                    position: relative;
+                    top: -1008px;
+                    width: 310px;" >Войдите в свою учетную запись</h2>
+                    <p>Нет аккаунта? <a href="#">Присоеденяйся здесь</a></p>
+                        
+                        // Обработка на сервере
+                        app.post('/callback', async (req, res) => {
+                            const token = req.body.token;
+                            try {
+                                const user = await verify(token);
+                                // Проверить, зарегистрирован ли пользователь в вашей базе
+                                const isRegistered = await checkUserInDatabase(user.email);
+                                if (isRegistered) {
+                                    res.redirect('/dashboard');
+                                } else {
+                                    res.send('Аккаунт не найден. Пожалуйста, зарегистрируйтесь.');
+                                }
+                            } catch (error) {
+                                res.status(400).send('Ошибка авторизации');
+                            }
+                        });</script>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<!-- Кнопка Google Sign-In -->
+
+<script>
+  window.onload = function () {
+    google.accounts.id.initialize({
+      client_id: '359520583469-2p0sfbm13vks33q51fp6fj5pb86snt10.apps.googleusercontent.com', // Вставьте ваш Client ID
+      callback: handleCredentialResponse, // Функция для обработки ответа
+    });
+
+    // Рендер кнопки входа
+    google.accounts.id.renderButton(
+      document.getElementById("Google-login"),
+      { theme: "outline", size: "large" } // Параметры кнопки
+    );
+
+    // Обработчик ответа
+    function handleCredentialResponse(response) {
+      const token = response.credential;
+      console.log("Encoded JWT ID token: " + token);
+
+      // Отправка токена на сервер для проверки
+      fetch("https://localhost:3000/verify-token", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: token }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Server response:", data); // Ответ от сервера
+        })
+        .catch((error) => console.error("Error:", error));
+    }
+  };
+</script>
+
+
+
+<!-- Кнопка для входа -->
+                <script>
+                    // Кнопка "Продолжить"
+             document.getElementById('continue-btn').addEventListener('click', function () {
+               showModal();
+             });
+             
+             // Функция для показа модального окна
+             function showModal() {
+               const modal = document.getElementById('modal');
+               modal.classList.remove('hidden'); // Убираем класс hidden
+             }
+             
+             // Функция для скрытия модального окна
+             function hideModal() {
+               const modal = document.getElementById('modal');
+               modal.classList.add('hidden'); // Добавляем класс hidden
+             }
+             
+             // Кнопка "Следующий"
+             document.getElementById('next-btn').addEventListener('click', function () {
+               const selectedOption = document.querySelector('input[name="reason"]:checked');
+               if (selectedOption) {
+                 hideModal();
+               } else {
+                 alert('Пожалуйста, выберите один из вариантов.');
+               }
+             });</script>
+
+
+<script>
+    // Кнопка "Следующая"
+document.getElementById("next-btn").addEventListener("click", function () {
+  // Найдём выбранный радио-пункт
+  const selectedOption = document.querySelector('input[name="reason"]:checked');
+  
+  if (selectedOption) {
+    const value = selectedOption.value; // Получим значение (buy или sell)
+
+    if (selectedValue === 'Buy')
+
+    // Закрываем текущее окно
+    closeModal("modal");
+
+    // Открываем нужное окно в зависимости от выбора
+    if (value === "buy") {
+      openModal("modal-buy");
+    } else if (value === "sell") {
+      openModal("modal-sell");
+    }
+  } else {
+    alert("Пожалуйста, выберите вариант!"); // Если ничего не выбрано
+  }
+});
+
+// Функция для открытия модального окна
+function openModal(modalId) {
+  document.getElementById(modalId).classList.remove("hidden");
+}
+
+// Функция для закрытия модального окна
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.add("hidden");
+}
+  </script>
+
+    
+    
+    <div class="container trending">
+        <a id="show-more-btn" href="#steel" class="see-all">Смотерть ещё</a>
+        <a style="display: none;" id="display-" href="#" class="see-all">Скрыть</a>
+         <h3>Лучший фрилансеры месяца:</h3>
+         <a class="for" href="#">
+         <div class="games">
+
+            <!--Список изначакльных фрилансеров -->
+
+            <div class="block5">
+                <img class="fl" src="img/IMG_3195.JPG" alt="">
+                <div class="levl">Уровень: &#10022; &#10022; &#10022; &#10023; &#10023;</div>
+                <div class="Info-frilance">
+                    <div class="fame-frelance">
+                        <h4>Данил Ч.</h4>
+                        <p>Веб-дизайнер</p>
+                <span>От $40 <span class="old-price">$75</span></span>
+                <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                    </div>
+                </div>
+                <span><span class="old-price">$75</span>
+            </div>
+            <div class="block5">
+                <img class="fl" src="img/Лысый.jpg" alt="">
+                <div class="levl2">Уровень: &#10022; &#10022; &#10022; &#10022; &#10023;</div>
+                <div class="Info-frilance">
+                    <div class="fame-frelance">
+                        <h4>Чабану Данил</h4>
+                        <p>Веб-дизайнер</p>
+                <span>От $40 <span class="old-price">$75</span></span>
+                <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                    </div>
+                </div>
+                <span><span class="old-price">$75</span>
+            </div>
+            <div class="block5">
+                <img class="fl" src="img/Лысый.jpg" alt="">
+                <div class="levl2">Уровень: &#10022; &#10022; &#10022; &#10022; &#10023;</div>
+                <div class="Info-frilance">
+                    <div class="fame-frelance">
+                        <h4>Чабану Данил</h4>
+                        <p>Веб-дизайнер</p>
+                <span>От $40 <span class="old-price">$75</span></span>
+                <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                    </div>
+                </div>
+                <span><span class="old-price">$75</span>
+            </div>
+
+            <div class="block5">
+                <img class="fl" src="img/Любимая.jpg" alt="">
+                <div class="levl4">Уровень: &#10022; &#10022; &#10022; &#10022; &#10022;</div>
+                <div class="Info-frilance">
+                    <div class="fame-frelance">
+                        <h4>Чабану Данил</h4>
+                        <p>Веб-дизайнер</p>
+                <span>От $40 <span class="old-price">$75</span></span>
+                <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                    </div>
+                </div>
+                <span><span class="old-price">$75</span>
+            </div>
+
+            <div id="more-freelancers" class="hidden">
+                <div class="freelanc">
+                    <img class="fl" src="img/Любимая.jpg" alt="">
+                    <div class="levl4">Уровень: &#10022; &#10022; &#10022; &#10022; &#10022;</div>
+                    <div class="Info-frilance">
+                        <div class="fame-frelance">
+                            <h4>Чабану Данил</h4>
+                            <p>Веб-дизайнер</p>
+                    <span>От $40 <span class="old-price">$75</span></span>
+                    <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                        </div>
+                    </div>
+                    <span><span class="old-price">$75</span>
+                </div>
+                <div style="top: -580px" class="freelanc">
+                    <img class="fl" src="img/Любимая.jpg" alt="">
+                    <div class="levl4">Уровень: &#10022; &#10022; &#10022; &#10022; &#10022;</div>
+                    <div class="Info-frilance">
+                        <div class="fame-frelance">
+                            <h4>Чабану Данил</h4>
+                            <p>Веб-дизайнер</p>
+                    <span>От $40 <span class="old-price">$75</span></span>
+                    <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                        </div>
+                    </div>
+                    <span><span class="old-price">$75</span>
+                </div>
+                <div style="top: -580px" class="freelanc">
+                    <img class="fl" src="img/Любимая.jpg" alt="">
+                    <div class="levl4">Уровень: &#10022; &#10022; &#10022; &#10022; &#10022;</div>
+                    <div class="Info-frilance">
+                        <div class="fame-frelance">
+                            <h4>Чабану Данил</h4>
+                            <p>Веб-дизайнер</p>
+                    <span>От $40 <span class="old-price">$75</span></span>
+                    <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                        </div>
+                    </div>
+                    <span><span class="old-price">$75</span>
+                </div>
+                <div style="top: -580px" class="freelanc">
+                    <img class="fl" src="img/Любимая.jpg" alt="">
+                    <div class="levl4">Уровень: &#10022; &#10022; &#10022; &#10022; &#10022;</div>
+                    <div class="Info-frilance">
+                        <div class="fame-frelance">
+                            <h4>Чабану Данил</h4>
+                            <p>Веб-дизайнер</p>
+                    <span>От $40 <span class="old-price">$75</span></span>
+                    <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                        </div>
+                    </div>
+                    <span><span class="old-price">$75</span>
+                </div>
+                <div style="top: -580px" class="freelanc">
+                    <img class="fl" src="img/Любимая.jpg" alt="">
+                    <div class="levl4">Уровень: &#10022; &#10022; &#10022; &#10022; &#10022;</div>
+                    <div class="Info-frilance">
+                        <div class="fame-frelance">
+                            <h4>Чабану Данил</h4>
+                            <p>Веб-дизайнер</p>
+                    <span>От $40 <span class="old-price">$75</span></span>
+                    <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                        </div>
+                    </div>
+                    <span><span class="old-price">$75</span>
+                </div>
+                <div id="steel" style="top: -580px" class="freelanc">
+                    <img class="fl" src="img/Любимая.jpg" alt="">
+                    <div class="levl4">Уровень: &#10022; &#10022; &#10022; &#10022; &#10022;</div>
+                    <div class="Info-frilance">
+                        <div class="fame-frelance">
+                            <h4>Чабану Данил</h4>
+                            <p>Веб-дизайнер</p>
+                    <span>От $40 <span class="old-price">$75</span></span>
+                    <p class="star">&#9733; 4.9 <strong class="Ot">(153..)</strong></p>
+                        </div>
+                    </div>
+                    <span><span class="old-price">$75</span>
+                </div>
+            </div>
+            <a style="left: -680px;
+            bottom: -1850px;
+            position: relative;
+            height: 20px;" class="see-all" id="dalee" href="#">Далее</a>
+            
+
+    </a>
+
+    <script>
+        document.getElementById('show-more-btn').addEventListener('click', function () {
+  const moreFreelancers = document.getElementById('more-freelancers');
+
+  // Убираем класс hidden, чтобы показать скрытые фрилансеры
+  moreFreelancers.classList.remove('hidden');
+
+  // Добавляем эффект анимации появления
+  moreFreelancers.classList.add('fade-in');
+
+  // Скрываем кнопку
+  this.style.display = 'none';
+});
+         </script>
+
+         <!--Скрипт № 2 -->>
+
+         <script>
+            document.getElementById('show-more-btn').addEventListener('click', function () {
+      const moreFreelancers = document.getElementById('more-freelancers');
+    
+      // Убираем класс hidden, чтобы показать скрытые фрилансеры
+      moreFreelancers.classList.remove('diplay-');
+    
+      // Добавляем эффект анимации появления
+      moreFreelancers.classList.add('fade-in');
+    
+      // Скрываем кнопку
+      this.style.display = 'display-';
+    });
+             </script>
+</div>
+
+    <div class="container big-text">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    <div class="container banner">
+        <h3>Lorem Ipsum</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+         <img style="position: relative;
+    z-index: 10000;" src="img/Rectangle 4.svg" alt="">
+    </div>
+    
+    
+</div>
+<div class="features">
+    <div class="container">
+        <h3>Выберите категорию:</h3>
+         <p>Нету категорий которой которой вам нужна? Пиши в <a class="pod" href="#">поддержку</a></p>
+         <div class="info">
+            <div class="block">
+                <img src="img/Group 48.png" alt="">
+                <p>Mobile Game Development</p>
+                <img src="img/arrow 1.png" alt="">
+            </div>
+            <div class="block">
+                <img src="img/Group 49.png" alt="">
+                <p>Mobile Game Development</p>
+                <img src="img/arrow 1.png" alt="">
+            </div>
+            <div class="block">
+                <img src="img/Group 50.png" alt="">
+                <p>Mobile Game Development</p>
+                <img src="img/arrow 1.png" alt="">
+            </div>
+            <div class="block">
+                <img src="img/Group 51.png" alt="">
+                <p>Mobile Game Development</p>
+                <img src="img/arrow 1.png" alt="">
+            </div>
+            <div class="block">
+                <img src="img/Group 52.png" alt="">
+                <p>Mobile Game Development</p>
+                <img src="img/arrow 1.png" alt="">
+            </div>
+            <div class="block">
+                <img src="img/Group 53.png" alt="">
+                <p>Mobile Game Development</p>
+                <a href="#"><img src="img/arrow 1.png" alt="#"></a>
+            </div>
+         </div>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="container project">
+        <h3>Вдохновляйтесь работами, выполненными проектом Moder<strong class="cl">Web</strong></h3>
+        <p>Мы начинающий проект, так что присоеденяйся!</p>
+        <div class="images">
+            <img src="img/Rectangle 15.png" alt="">
+            <img src="img/Rectangle 16.png" alt="">
+            <img src="img/Rectangle 17.png" alt="">
+        </div>
+        <div class="images">
+            <img src="img/Rectangle 18.png" alt="">
+            <img src="img/Rectangle 19.png" alt="">
+            <img src="img/Rectangle 20.png" alt="">
+        </div>
+        <a href="" class="see-all">Смотреть</a>
+        <a href="" class="see-ll active"></a>
+    </div>
+    <div class="container email">
+        <h3>Что-то не так?</h3>
+        <p>Отправьте ваш номер телефона и вам позвонят в ближайшее время</p>
+        <div class="block">
+            <div>   
+                <h4>Оставайтесь в курсе событий</h4>
+                <p>Подпишитесь, на наши соц сети чтобы первыми узнавать последние новости и обновления о Moder<strong class="cl">Web</strong>.</p>
+
+            </div>
+            <div>
+                <input type="email" id="EmailFieald" placeholder="Введите ваш номер телефона +380">
+                <button onclick="checkEmail()">Continue</button>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<footer>
+    <div class="block container">
+        <div>
+            <span class="Logo">Moder<strong class="cl">Web</strong></span>
+            <p>MODERWEB - ваш первый шаг к совершенству. Создавайте будущее вместе с нами!</p>
+        </div>
+    <div>
+        <h4>About us</h4>
+        <ul>
+            <li>Zeux</li>
+            <li>Portfolio</li>
+            <li>Careers</li>
+            <li>Contact us</li>
+        </ul>
+    </div>
+    <div>
+        <h4>Contacs us</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <p>+380 68 958 30 52</p>
+    </div>
+    </div>  
+    <hr>
+    <p>Copyright ® 2021 Lorem All right Rcerved </p>
+</footer>
+
+<script>
+    function checkEmail (){
+        let email = document.querySelector('#EmailFieald').value;
+        if(!email.includes('@')) alert('Нет символа @');
+        else if(!email.includes('.')) alert('Нет символа .');
+        else alert ('Всё отлтчно');
+    }
+</script>
+
+</body>
+</html> 

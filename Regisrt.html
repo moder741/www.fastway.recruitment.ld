@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrapper">
+    <header class="container">
+        <span class="logo">Moder<strong class="cl">Web</strong></span>
+        <nav>  
+            <ul>
+                <li class="active"><a href="index.html">Главная</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Potrfolio</a></li>
+                <li><a href="#">News</a></li>
+                <li class="btn"><a href="Вход.html">Вход</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container emaill">
+        <h3>Регистрация:</h3>
+        <div class="blockk">
+            <div>
+                <h4>Заполните ваши данные для того что бы пройти регестрацию!</h4>
+                <div id="photopreview" class="photo-preview">
+                    <p>Загрузите фото профиля <span>4x3</span> <span class="oldd-price">(Не обьязательно)</span></p>
+                </div>
+                <div class="Ac">
+                    <p>Есть аккаунт? <a href="Вход.html"><strong class="cl">Вход</strong></a></p>
+                </div>
+            </div>
+            <div>
+                <input type="email" id="Login" placeholder="Придумайте себе Login">
+                <input type="email" id="FameFieald" placeholder="Введите ваше имя и фамилию">
+                <input type="email" id="EmailFieald" placeholder="Введите ваш Email">
+                <input type="email" id="NumFieald" placeholder="Введите ваш номер телефона">
+                <input type="email" id="NumFieald" placeholder="Придумайте ваш пароль">
+            <nav>
+                <ul class="ul">
+                    <button id="continue-btn">Продолжить</button>
+                </ul>
+            </nav>
+            <div class="photo-upload">
+                <input type="file" id="profilephoto" accept="image/*" style="display: none;">
+                <!--Кнопка для загрузки фото-->
+                <label for="profilephoto" class="upload-button">Загрузить фото</label>
+            </div>
+    
+            </div>
+        </div>
+    </div>
+
+<!-- Модальное окно -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <h2 style="left: 100px;
+    bottom: -100px;
+    text-align: center;
+    position: relative;
+    max-width: 800px;
+    font-size: 38px;
+    color: black;">Ваш аккаунт создан! Что привело вас сюда?</h2>
+    <p style="bottom: -150px;
+    position: relative;
+    color: #000000b8;">Мы хотим создать для вас такие условия, чтобы вы чувствовали себя как дома.</p>
+    <div class="options">
+      <label>
+        <div  class="window-window">
+            <img style="top: 25px;
+            position: relative;
+            width: 80px;
+            height: 80px;" src="img/Лупа.png" alt="">
+            <span style="font-size: 18px;
+            left: -100px;
+            top: 70px;
+            position: relative;
+            color: black;
+            font-weight: 700;">Продажа услуг фрилансера</span>
+            <p style="left: -45px;" >Я хотел бы предложить свои услуги</p>
+        </div>
+      </label>
+      <label>
+        <a href="Register2.html">
+        <div  class="window-window">
+            <img style="top: 25px;
+            position: relative;
+            width: 80px;
+            height: 80px;" src="img/Рука.png" alt="">
+            <span style="font-size: 18px;
+            left: -100px;
+            top: 70px;
+            position: relative;
+            color: black;
+            font-weight: 700;">Покупка услуг фрилансера</span>
+            <p >Я ищу талантливых людей для работы.</p>
+        </div>
+      </label>
+      </a>
+
+    </div>
+  </div>
+</div>
+    <script>
+       // Кнопка "Продолжить"
+document.getElementById('continue-btn').addEventListener('click', function () {
+  showModal();
+});
+
+// Функция для показа модального окна
+function showModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.remove('hidden'); // Убираем класс hidden
+}
+
+// Функция для скрытия модального окна
+function hideModal() {
+  const modal = document.getElementById('modal');
+  modal.classList.add('hidden'); // Добавляем класс hidden
+}
+
+// Кнопка "Следующий"
+document.getElementById('next-btn').addEventListener('click', function () {
+  const selectedOption = document.querySelector('input[name="reason"]:checked');
+  if (selectedOption) {
+    hideModal();
+  } else {
+    alert('Пожалуйста, выберите один из вариантов.');
+  }
+});</script>
+
+    </div>
+  </div>
+  
+  <!-- Модальное окно для Продажи -->
+  <div id="modal-sell" class="modal hidden">
+    <div class="modal-content">
+      <h2>Продажа услуг</h2>
+      <p>Вы выбрали продажу услуг.</p>
+      <button onclick="closeModal('modal-sell')">Закрыть</button>
+    </div>
+  </div>
+
+
+  <script>
+    // Кнопка "Следующая"
+document.getElementById("next-btn").addEventListener("click", function () {
+  // Найдём выбранный радио-пункт
+  const selectedOption = document.querySelector('input[name="reason"]:checked');
+  
+  if (selectedOption) {
+    const value = selectedOption.value; // Получим значение (buy или sell)
+
+    if (selectedValue === 'Buy')
+
+    // Закрываем текущее окно
+    closeModal("modal");
+
+    // Открываем нужное окно в зависимости от выбора
+    if (value === "buy") {
+      openModal("modal-buy");
+    } else if (value === "sell") {
+      openModal("modal-sell");
+    }
+  } else {
+    alert("Пожалуйста, выберите вариант!"); // Если ничего не выбрано
+  }
+});
+
+// Функция для открытия модального окна
+function openModal(modalId) {
+  document.getElementById(modalId).classList.remove("hidden");
+}
+
+// Функция для закрытия модального окна
+function closeModal(modalId) {
+  document.getElementById(modalId).classList.add("hidden");
+}
+  </script>
+  --------------------------------------------------------------------
+
+<script>
+    // Кнопка "Продолжить"
+document.getElementById('next-btn').addEventListener('click', function () {
+showModal();
+});
+
+// Функция для показа модального окна
+function showModal() {
+const modal = document.getElementById('modal');
+modal.classList.remove('hidden'); // Убираем класс hidden
+}
+
+// Функция для скрытия модального окна
+function hideModal() {
+const modal = document.getElementById('modal');
+modal.classList.add('hidden'); // Добавляем класс hidden
+}
+
+// Кнопка "Следующий"
+document.getElementById('next-btn').addEventListener('click', function () {
+const selectedOption = document.querySelector('input[name="reason"]:checked');
+if (selectedOption) {
+ alert(`Вы выбрали: ${selectedOption.nextElementSibling.textContent}`);
+ hideModal();
+} else {
+ alert('Пожалуйста, выберите один из вариантов.');
+}
+});</script>
+_
+
+    <script>
+        function checkEmail() {
+    // Получаем значения полей
+    const username = document.getElementById('username').value.trim();
+    const email = document.querySelector('#FameField').value.trim();
+
+    // Массив недопустимых символов
+    const invalidCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '+', '[', ']', '{', '}', ';', ':', "'", '"', '<', '>', '/', '?', '|', '\\'];
+
+    // Проверка: пустые поля
+    if (!username || !email) {
+        alert('Пожалуйста, заполните все поля!');
+        return;
+    }
+
+    // Проверка на недопустимые символы
+    for (let char of invalidCharacters) {
+        if (email.includes(char)) {
+            alert(`Недопустимый символ: ${char}`);
+            return;
+        }
+    }
+
+    // Сохраняем имя в LocalStorage
+    localStorage.setItem('username', username);
+
+    // Перенаправляем на другую страницу
+    window.location.href = 'index.html'; // Проверьте путь к файлу
+}
+    </script>
+    
+    <script>
+        function checkEmail (){
+            let email = document.querySelector('#EmailFieald').value;
+            if(!email.includes('@')) alert('Нет символа @');
+            else if(!email.includes('.')) alert('Нет символа .');
+            else alert ('Всё отлтчно');
+        }
+    </script>
+
+<script>
+    function checkEmail (){
+        let email = document.querySelector('#Login').value;
+        if(!email.includes('@')) alert('Нет символа @');
+        else if(!email.includes('.')) alert('Нет символа .');
+        else alert ('Всё отлтчно');
+    }
+</script>
+
+<script>
+    function checkEmail() {
+    const username = document.getElementById('username').value; // Получаем имя пользователя
+    const email = document.querySelector('#FameField').value; // Получаем значение email
+
+    // Массив недопустимых символов
+    const invalidCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '=', '+', '[', ']', '{', '}', ';', ':', "'", '"', '<', '>', '/', '?', '|', '\\'];
+
+    // Проверяем, есть ли недопустимые символы в email
+    for (let char of invalidCharacters) {
+        if (email.includes(char)) {
+            alert(`Недопустимый символ: ${char}`);
+            return; // Прерываем выполнение, если найден недопустимый символ
+        }
+    }
+
+    // Если проверка прошла, сохраняем данные и перенаправляем
+    localStorage.setItem('username', username); // Сохраняем имя пользователя
+    window.location.href = '/index.html'; // Перенаправляем на другую страницу
+}
+</script>
+
+<script>
+    function checkEmail (){
+        let email = document.querySelector('#NumFieald').value;
+        if(!email.includes('+380')) alert('Начало номера должно начинатся с +380');
+        else alert ('Всё отлично');
+
+
+    }
+</script>
+
+<footer>
+    <div class="block container">
+        <div>
+            <span class="Logo">Moder<strong class="cl">Web</strong></span>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        </div>
+    <div>
+        <h4>About us</h4>
+        <ul>
+            <li>Zeux</li>
+            <li>Portfolio</li>
+            <li>Careers</li>
+            <li>Contact us</li>
+        </ul>
+    </div>
+    <div>
+        <h4>Contacs us</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+        <p>+380 68 958 30 52</p>
+    </div>
+    </div>  
+    <hr>
+    <p>Copyright ® 2021 Lorem All right Rcerved </p>
+</footer>
